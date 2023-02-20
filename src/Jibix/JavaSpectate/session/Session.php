@@ -19,19 +19,21 @@ use pocketmine\player\Player;
  */
 class Session{
 
+    private static \WeakMap $data;
+
+    public static function get(Player $player) : Session{
+        self::$data ??= new \WeakMap();
+
+        return self::$data[$player] ??= new Session();
+    }
+
+
     public const FLY_SPEED = 0.05;
 
     private float $flySpeed = self::FLY_SPEED;
 
-    public function __construct(private Player $player){}
-
-    public function getPlayer(): Player{
-        return $this->player;
-    }
-
-    public function setFlySpeed(float $value): void{
+    public function setFlySpeed(Player $player, float $value): void{
         $this->flySpeed = $value;
-        $player = $this->getPlayer();
 
         $isOp = $player->hasPermission(DefaultPermissions::ROOT_OPERATOR);
         $player->getNetworkSession()->sendDataPacket(UpdateAbilitiesPacket::create(new AbilitiesData(

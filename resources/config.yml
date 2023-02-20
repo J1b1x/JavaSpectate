@@ -6,3 +6,15 @@ speed-multiplyer: 0.05
 below-default: false
 #The scroll direction to get faster ("left" or "right")
 direction: "left"
+
+#The fly speed command settings
+command:
+  name: "flyspeed"
+  description: "Change a players fly speed"
+  usage: "/flyspeed <float: speed> [string: player]"
+  aliases: ["fs"]
+  permission:
+    self: "flyspeed.command.self"
+    other: "flyspeed.command.other"
+  success: "§aYou have successfully set the flyspeed of§b {target}§a to§6 {speed}§a!"
+  error: "§b{player}§c is not in spectator!"

@@ -1,5 +1,6 @@
 <?php
 namespace Jibix\JavaSpectate;
+use Jibix\JavaSpectate\command\FlySpeedCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
 
@@ -24,5 +25,6 @@ final class Main extends PluginBase{
 
     protected function onEnable(): void{
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
+        $this->getServer()->getCommandMap()->register($this->getName(), new FlySpeedCommand());
     }
 }
