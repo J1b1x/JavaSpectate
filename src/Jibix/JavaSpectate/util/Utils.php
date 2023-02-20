@@ -17,7 +17,7 @@ use pocketmine\permission\PermissionManager;
 final class Utils{
 
     public static function checkDirection(int $oldSlot, int $newSlot): bool{
-        return $oldSlot !== $newSlot &&
+        return max($oldSlot, $newSlot) - min($oldSlot, $newSlot) == 1 &&
             (Configuration::DIRECTION() == Facing::DOWN && $oldSlot > $newSlot && !($newSlot == 0 && $oldSlot == 8)) ||
             (Configuration::DIRECTION() == Facing::UP && $oldSlot < $newSlot && !($oldSlot == 0 && $newSlot == 8));
     }
