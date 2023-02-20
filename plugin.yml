@@ -1,0 +1,6 @@
+name: "JavaSpectate"
+version: 1.0
+api: 4.0.0
+main: Jibix\JavaSpectate\Main
+author: "Jibix"
+website: "https://github.com/J1b1x/JavaSpectate"

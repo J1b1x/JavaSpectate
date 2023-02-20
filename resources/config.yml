@@ -1,0 +1,8 @@
+#Max is 1, everything above 0.7 is kinda laggy
+max-fly-speed: 0.7
+#Multiplier how much the speed increases/decreases per slot change)
+speed-multiplyer: 0.05
+#If true the players can get slower than the default fly speed (could be useful for some montages or something)
+below-default: false
+#The scroll direction to get faster ("left" or "right")
+direction: "left"
