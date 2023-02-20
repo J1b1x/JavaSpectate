@@ -17,4 +17,4 @@ command:
     self: "flyspeed.command.self"
     other: "flyspeed.command.other"
   success: "§aYou have successfully set the flyspeed of§b {target}§a to§6 {speed}§a!"
-  error: "§b{player}§c is not in spectator!"
+  error: "§b{target}§c is not in spectator!"
